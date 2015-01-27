@@ -1,0 +1,18 @@
+%define lookup-function-name lookupGeneratedInit
+%define class-name TTwitterBindings
+%{
+
+#include <string.h>
+#include <v8.h>
+#include <KrollBindings.h>
+
+#include "t.twitter.ExampleProxy.h"
+#include "t.twitter.TTwitterModule.h"
+
+
+%}
+struct titanium::bindings::BindEntry;
+%%
+t.twitter.ExampleProxy, ::t::twitter::ttwitter::ExampleProxy::bindProxy, ::t::twitter::ttwitter::ExampleProxy::dispose
+t.twitter.TTwitterModule, ::t::twitter::TTwitterModule::bindProxy, ::t::twitter::TTwitterModule::dispose
+%%
